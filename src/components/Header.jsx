@@ -21,7 +21,7 @@ const Header = () => {
         <Center className="text-xl font-extrabold underline">
           The Elysian
         </Center>
-        <ul className="flex gap-16">
+        <ul className="flex sm:flex-row gap-16">
           <li>
             <NavLink to={"/resources"} className=" flex">
               <GiFlowerPot size={"42"} className="mr-4 mt-1" />

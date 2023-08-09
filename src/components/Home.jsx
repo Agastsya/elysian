@@ -6,12 +6,16 @@ import {
   Center,
   AbsoluteCenter,
   Text,
+  Image,
+  Circle,
 } from "@chakra-ui/react";
+import wardrobehome from "../assets/clothes.avif";
+
 const Home = () => {
   return (
     <>
-      <Stack bgColor={"#9AE6B4"}>
-        <VStack width={"50%"} h={"80vh"} className="relative">
+      <Stack bgColor={"#9AE6B4"} direction={["column", "row"]}>
+        <VStack width={["0", "50%"]} h={["81vh"]} className="relative">
           <Box alignContent={"flex-start"} className="absolute" top={"40%"}>
             <Text size={"xl"} fontFamily={"sans-serif"} className="text-5xl">
               YOUR SUMMER WARDROBE
@@ -22,7 +26,9 @@ const Home = () => {
             </Text>
           </Box>
         </VStack>
-        <VStack></VStack>
+        <VStack className="w-1/2 h-1/2 pr-14 pt-14">
+          <Image className="rounded-md" src={wardrobehome}></Image>
+        </VStack>
       </Stack>
     </>
   );
