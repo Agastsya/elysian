@@ -19,7 +19,7 @@ const Header = () => {
         className=" border-spacing-0 border-b-2 "
       >
         <Center className="text-xl font-extrabold underline">
-          The Elysian
+          <NavLink to={"/"}>The Elysian </NavLink>
         </Center>
         <ul className="flex sm:flex-row gap-16">
           <li>

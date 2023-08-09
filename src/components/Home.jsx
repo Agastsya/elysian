@@ -1,14 +1,4 @@
-import {
-  HStack,
-  Box,
-  VStack,
-  Stack,
-  Center,
-  AbsoluteCenter,
-  Text,
-  Image,
-  Circle,
-} from "@chakra-ui/react";
+import { Box, VStack, Stack, Text, Image } from "@chakra-ui/react";
 import wardrobehome from "../assets/clothes.avif";
 
 const Home = () => {

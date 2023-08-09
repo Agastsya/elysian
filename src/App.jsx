@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import { GlobalStyles } from "./GlobalStyles";
 import Header from "./components/Header";
 import NewArrivals from "./components/NewArrivals";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path={"/about"} element={<About />} />
           <Route path={"/services"} element={<Services />} />
           <Route path={"/contact"} element={<Contact />} />
-          <Route path={"newarrivals"} element={<NewArrivals />}></Route>
+          <Route path={"newarrivals"} element={<NewArrivals />} />
+          <Route path={"/products:id"} element={<ProductDetails />} />
         </Routes>
       </Router>
     </>
