@@ -1,26 +1,48 @@
 import { NavLink } from "react-router-dom";
-import mainlogo from "../assets/stumbleupon.png";
+import { HStack, VStack, Stack, Container, Text } from "@chakra-ui/react";
 
 const Header = () => {
   return (
     <>
-      <header className="flex justify-between bg-transparent py-4  ">
-        <img src={mainlogo} alt="" className="h-10" />
-        <ul className="flex gap-6 pr-5 content-start pt-2 text-lg font-semi-bold font-Roboto ">
-          <li className=" p-2s  rounded-lg h-10 justify-center flex items-center w-24 text-center shadow-lg space-y-3">
-            <NavLink to="/">Home</NavLink>
+      <Stack
+        direction={"row"}
+        w={"xl"}
+        justifyContent={"space-between"}
+        px={"16"}
+        py={"12"}
+      >
+        <Text>The Muse</Text>
+        <ul className="flex gap-5">
+          <li>
+            <NavLink to={"/resources"}>
+              {" "}
+              <VStack w={"20"} align={"flex-start"}>
+                <Text>Resources</Text>
+                <Text>FAQ,Filing,Support</Text>
+              </VStack>
+            </NavLink>
           </li>
-          <li className=" p-2s  rounded-lg h-10 justify-center flex items-center w-24 text-center shadow-lg space-y-3">
-            <NavLink to="/services">Services</NavLink>
+          <li>
+            <NavLink to={"/visit"}>
+              {" "}
+              <VStack w={"20"} align={"flex-start"}>
+                <Text>Visit the Elysian</Text>
+                <Text>Store Locator</Text>
+              </VStack>
+            </NavLink>
           </li>
-          <li className=" p-2s  rounded-lg h-10 justify-center flex items-center w-24 text-center shadow-lg space-y-3">
-            <NavLink to="/about">About</NavLink>
+          <li>
+            <NavLink to={"/signin"}>
+              {" "}
+              <VStack w={"20"} align={"flex-start"}>
+                <Text>Hello,Sign In</Text>
+                <Text>Your Account</Text>
+              </VStack>
+            </NavLink>
           </li>
-          <li className=" p-2s  rounded-lg h-10 justify-center flex items-center w-24 text-center shadow-lg space-y-3">
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
+          <li></li>
         </ul>
-      </header>
+      </Stack>
     </>
   );
 };
