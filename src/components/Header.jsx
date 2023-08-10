@@ -1,102 +1,125 @@
 import { NavLink } from "react-router-dom";
-import { Stack, Text, Center, Box } from "@chakra-ui/react";
+import {
+  Stack,
+  Text,
+  Avatar,
+  AvatarBadge,
+  AvatarGroup,
+  HStack,
+  VStack,
+  Box,
+  Center,
+} from "@chakra-ui/react";
 import { GiFlowerPot } from "react-icons/gi";
-import { BsSearch, BsBasket } from "react-icons/bs";
+import { BsSearch, BsBasket, BsHandbag, BsPinMap } from "react-icons/bs";
 
 const Header = () => {
   return (
     <>
-      <Center h={"27"} color={"white"} bgColor={"#38A169"}>
-        {" "}
-        Find Your New Favorite Product
+      <Center maxW={"100vw"} color={"white"} bgColor={"green"}>
+        <NavLink to={"/newarrivals"}>Check Out New Products</NavLink>
       </Center>
-      <Stack
-        direction={"row"}
-        w={"xl"}
+      <HStack
         justifyContent={"space-between"}
-        px={"16"}
-        py={"12"}
-        className=" border-spacing-0 border-b-2 "
+        maxW={"100vw"}
+        overflow={"scroll"}
       >
-        <Center className="text-xl font-extrabold underline">
-          <NavLink to={"/"}>The Elysian </NavLink>
-        </Center>
-        <ul className="flex sm:flex-row gap-16">
-          <li>
-            <NavLink to={"/resources"} className=" flex">
-              <GiFlowerPot size={"42"} className="mr-4 mt-1" />
-              <Box className="flex-col">
-                <Text
-                  fontWeight={"bold"}
-                  fontSize={"lg"}
-                  display={"flex"}
-                  top={"10"}
-                >
-                  Resources
-                </Text>
-                <Text as={"i"} color={"gray"}>
-                  FAQ,Filing,Support
-                </Text>
-              </Box>
+        <NavLink to={"/"}>
+          <Text pl={"1vh"} pr={"2vh"} align={"left"} fontWeight={"bold"}>
+            The Elysian
+          </Text>
+        </NavLink>
+        <HStack justifyContent={"space-evenly"}>
+          <Box className="pr-2 sm:pr-11">
+            <NavLink to={"/resources"}>
+              <HStack>
+                <BsHandbag size={"24"} />
+                <VStack>
+                  <Text
+                    fontSize={"smaller"}
+                    fontWeight={"bold"}
+                    justifyContent={"flex-start"}
+                    alignSelf={"flex-start"}
+                  >
+                    Resources
+                  </Text>
+                  <Text
+                    fontSize={"small"}
+                    font
+                    as={"i"}
+                    color={"gray"}
+                    mt={"-1.5vh"}
+                  >
+                    FAQ,Blog,Support
+                  </Text>
+                </VStack>
+              </HStack>
             </NavLink>
-          </li>
-
-          <li>
-            <NavLink to={"/visit"}>
-              {" "}
-              <Box w={"20"} align={"flex-col"}>
-                <Text
-                  fontWeight={"bold"}
-                  fontSize={"lg"}
-                  display={"flex"}
-                  top={"10"}
-                >
-                  Visit the Elysian
-                </Text>
-                <Text as={"i"} color={"gray"}>
-                  Store Locator
-                </Text>
-              </Box>
+          </Box>
+          <Box className="pr-2 sm:pr-11 w-36 sm:w-40">
+            <NavLink to={"/visitus"}>
+              <HStack>
+                <BsPinMap size={"24"} />
+                <VStack>
+                  <Text
+                    fontSize={"smaller"}
+                    fontWeight={"bold"}
+                    justifyContent={"flex-start"}
+                    alignSelf={"flex-start"}
+                  >
+                    Visit Us
+                  </Text>
+                  <Text
+                    fontSize={"small"}
+                    font
+                    as={"i"}
+                    color={"gray"}
+                    mt={"-1.5vh"}
+                  >
+                    Store Locator
+                  </Text>
+                </VStack>
+              </HStack>
             </NavLink>
-          </li>
-
-          <li>
-            <NavLink to={"/signin"}>
-              {" "}
-              <Box w={"20"} align={"flex-col"}>
-                <Text
-                  fontWeight={"bold"}
-                  fontSize={"lg"}
-                  display={"flex"}
-                  top={"10"}
-                >
-                  Hello,Sign In
-                </Text>
-                <Text as={"i"} color={"gray"}>
-                  Your Account
-                </Text>
-              </Box>
+          </Box>
+          <Box className="pr-2 sm:pr-11 w-32 sm:w-40" ml={"-2vw"}>
+            <NavLink to={"/account"}>
+              <HStack>
+                <Avatar name="Agastsya Joshi" src="xyz" />
+                <VStack>
+                  <Text
+                    fontSize={"smaller"}
+                    fontWeight={"bold"}
+                    justifyContent={"flex-start"}
+                    alignSelf={"flex-start"}
+                  >
+                    Hello,Sign In
+                  </Text>
+                  <Text
+                    fontSize={"small"}
+                    font
+                    as={"i"}
+                    color={"gray"}
+                    mt={"-1.5vh"}
+                  >
+                    Your Account
+                  </Text>
+                </VStack>
+              </HStack>
             </NavLink>
-          </li>
-
-          <li>
-            <NavLink to={"/search"}>
-              <BsSearch size={"27"} className="my-3" />
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to={"/cart"}>
-              <BsBasket size={"27"} className="my-3 mr-16 " />
-            </NavLink>
-          </li>
-        </ul>
-      </Stack>
-      <Center gap={"80"} bgColor={"#EDF2F7"} h={"40"}>
+          </Box>
+        </HStack>
+      </HStack>
+      <Center
+        className="gap-2 sm:gap-40"
+        bgColor={"#EDF2F7"}
+        mt={"2"}
+        h={"30"}
+        overflow={"scroll"}
+      >
         <NavLink to={"/newarrivals"}>NEW ARRIVALS</NavLink>
         <NavLink to={"/men"}>MEN</NavLink>
         <NavLink to={"/women"}>WOMEN</NavLink>
-        <NavLink to={"/kids"}>KDIS</NavLink>
         <NavLink to={"/accessories"}>ACCESSORIES</NavLink>
         <NavLink to={"/giftideas"}>GIFT IDEAS</NavLink>
       </Center>
